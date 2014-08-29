@@ -41,7 +41,7 @@ action="<%=addLocationURL %>"
 	<aui:input name="resourceExtension" label="Resource Extension Format" value="<%=resourceExtension %>">
 	<aui:validator name="required" errorMessage="Cannot Be Left Blank"/>
 	</aui:input>
-	<strong>Make Sure It Matches the content type as in Documents And Media (application/xxx) format</strong>
+	<strong>Dont Include the dot</strong>
 	<%--Format for the resource --%>
 <aui:fieldset label="Email Settings And Configurations">
 

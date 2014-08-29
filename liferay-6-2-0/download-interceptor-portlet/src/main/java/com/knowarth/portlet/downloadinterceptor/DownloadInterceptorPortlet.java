@@ -12,8 +12,12 @@
  * details.
  */
 package com.knowarth.portlet.downloadinterceptor;
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.URL;
@@ -152,13 +156,10 @@ public class DownloadInterceptorPortlet extends MVCPortlet {
 		}
 		finally{
 			//For Downloading a resource
-			resourceResponse.setContentType("application/"+resExtension);
-			 
-			String contentDisposition = "attachment; filename=" + caseStudyName;
-			resourceResponse.setProperty(HttpHeaders.CONTENT_DISPOSITION, contentDisposition);
-				
-			resourceResponse.addProperty(HttpHeaders.CACHE_CONTROL, "max-age=3600");
+			
+			String contentDisposition = "attachment; filename=" + caseStudyName+"."+resExtension;
 			OutputStream out=resourceResponse.getPortletOutputStream();
+		
 			//LInk for resource URL Goes here. Uncomment it out for dynamic location and comment out the static link
 			System.out.println(resourceurl);
 			//InputStream is=new FileInputStream(new URL(resourceurl).get);
@@ -166,17 +167,24 @@ public class DownloadInterceptorPortlet extends MVCPortlet {
 			//InputStream is=new FileInputStream("/home/parth-ghiya/Downloads/Single_Sign-on Implementation.pdf");
 			URL url = new URL(resourceurl);
 			URLConnection conn = url.openConnection();
- 
+			resourceResponse.setContentType(conn.getContentType());
+			resourceResponse.setContentLength(conn.getContentLength());
+			resourceResponse.setCharacterEncoding(conn.getContentEncoding());
+			resourceResponse.setProperty(HttpHeaders.CONTENT_DISPOSITION, contentDisposition);				
+			resourceResponse.addProperty(HttpHeaders.CACHE_CONTROL, "max-age=3600");
+
+			
 			// open the stream and put it into BufferedReader
-			BufferedReader br = new BufferedReader(
-                               new InputStreamReader(conn.getInputStream()));
- 
+			//BufferedReader br = new BufferedReader(
+            //                   new InputStreamReader(conn.getInputStream()));
+			InputStream stream = conn.getInputStream();
 			int c;
-			while((c=br.read())!=-1){
+			while((c=stream.read())!=-1){
 				out.write(c);
 			}
+			out.flush();
 			out.close();
-			br.close();	
+			stream.close();	
 
 		}
 
