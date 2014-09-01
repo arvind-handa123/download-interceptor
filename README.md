@@ -25,10 +25,14 @@ How to Use Theme Personalizer (Liferay 6.2.x CE)
 
 Things to Remember
 ------
-- If there is no color scheme in a theme then Color Scheme dropdown will be blank. User can just choose Theme and apply it on the page.
-- User can apply theme to all the pages and then go to individual page and override it through theme personalizer portlet on that page.
-- The portlet will be automatically made hidden for Guest users.
-- If available themes are not configured by Portal admin then theme personalizer portlet will only display a message.
+Make Sure you have the following things setup.
+
+-Your Mail Server is Setup.
+Go to Admin->Control Panel->Server Administration->Mail and fill up the settings.
+![ScreenShot](https://raw.githubusercontent.com/knowarth-technologies/download-interceptor/master/screenshots/liferay-6.2/mail_Configuration.png) 
+- Documents Are Setup in Documents Library
+- You Copy valid URL from the document library as resourceURL
+If mail Server is not setup, a visitor would be able to download the resource but its details wont be sent to the configured email address.If Valid URL are not provided then a visitor wont be able to downlaod the corresponding resource. Each Document has to be stored in the Documents and the media portlet. By Default Only admin can configure the parameters in Portlet's preferences.
 
 Version 1.0.0
 ----
