@@ -6,6 +6,17 @@ It is very common and quite needed requirement for any network to allow users to
 
 How to Use Theme Personalizer (Liferay 6.1.x CE)
 ---------
+1. Install Download Interceptor war file on Liferay Portal.
+2. Sign In as Portal admin and navigate to Knowarth Technologies Category of the portlets.
+![ScreenShot](https://raw.githubusercontent.com/knowarth-technologies/download-interceptor/master/screenshots/liferay-6.1/category.png)
+3. Now Add Download Interceptor Portlet on your required page and go to Preferences. preferencesportlet.png
+![ScreenShot](https://raw.githubusercontent.com/knowarth-technologies/download-interceptor/master/screenshots/liferay-6.1/preferencesportlet.png)
+4. Fill up the preferences as per need. go to documents and media to get the URL of the resource which we want the user to download.Fill this url in resource URL in preference mode.
+![ScreenShot](https://raw.githubusercontent.com/knowarth-technologies/download-interceptor/master/screenshots/liferay-6.1/doc&lib.png)
+5.Enter email settings configuration and save the preferences.
+![ScreenShot](https://raw.githubusercontent.com/knowarth-technologies/download-interceptor/master/screenshots/liferay-6.1/preferencesemail.png)
+6.A guest user wont be able to access the preferences, he would fill the form and get access to the download resource.
+![ScreenShot](https://raw.githubusercontent.com/knowarth-technologies/download-interceptor/master/screenshots/liferay-6.1/user_download.png)
 
 How to Use Theme Personalizer (Liferay 6.2.x CE)
 ---------
