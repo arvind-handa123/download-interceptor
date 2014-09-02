@@ -1,7 +1,7 @@
 Download Interceptor
 =========
 
-It is very common and quite needed requirement for any network to allow users to download a resource, as well as collect the information of the user via email. Download Interceptor is a portlet which fullfills both functionalities. It allows admin of the portal to fill a form regarding information of the download resource such as the link from documents and media, the extension, the reciptent email address of the user, the body and the subject of the email address. All guest users would fill up the form and then able to download the resource. Download Interceptor can be added to any page. Once available on any page any link for resource url can be set corresponding to the page.
+It is very common requirement for any portal to allow user to download a case study, a document or any other resource. Many times it is equally or more important for an organization to gather user data before allowing the user to download any resource. Download Interceptor portlet gathers user’s information and email it to configured email address before allowing the user to download the file. It allows admin of the portal to fill a form regarding information of the download resource such as the link from documents and media, the extension, the reciptent email address of the user, the body and the subject of the email address. All guest users would fill up the form and then able to download the resource. Download Interceptor can be added to any page. Once available on any page any link for resource url can be set corresponding to the page.
 
 
 How to Use Theme Personalizer (Liferay 6.1.x CE)
