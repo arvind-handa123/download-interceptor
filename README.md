@@ -1,7 +1,12 @@
 Download Interceptor
 =========
 
-It is very common requirement for any portal to allow user to download a case study, a document or any other resource. Many times it is equally or more important for an organization to gather user data before allowing the user to download any resource. Download Interceptor portlet gathers user’s information and email it to configured email address before allowing the user to download the file. It allows admin of the portal to fill a form regarding information of the download resource such as the link from documents and media, the extension, the reciptent email address of the user, the body and the subject of the email address. All guest users would fill up the form and then able to download the resource. Download Interceptor can be added to any page. Once available on any page any link for resource url can be set corresponding to the page.
+It is very common requirement for any portal to allow user to download a case study, a document or any other resource. Many times it is equally or more important for an organization to gather user data before allowing the user to download any resource. Download Interceptor portlet gathers user’s information and emails it to configured email address before allowing the user to download the file.
+
+Download Interceptor provides following characteristics
+- Configurable dynamic email settings.
+- Setting up resource configurations for downloading resource.
+- automatic email sending of user information to email address which is setup.
 
 
 How to Use Theme Personalizer (Liferay 6.1.x CE)
@@ -9,7 +14,7 @@ How to Use Theme Personalizer (Liferay 6.1.x CE)
 1. Install Download Interceptor war file on Liferay Portal.
 2. Sign In as Portal admin and navigate to Knowarth Technologies Category of the portlets.
 ![ScreenShot](https://raw.githubusercontent.com/knowarth-technologies/download-interceptor/master/screenshots/liferay-6.1/category.png)
-3. Now Add Download Interceptor Portlet on your required page and go to Preferences. preferencesportlet.png
+3. Now Add Download Interceptor Portlet on your required page and go to Preferences.
 ![ScreenShot](https://raw.githubusercontent.com/knowarth-technologies/download-interceptor/master/screenshots/liferay-6.1/preferencesportlet.png)
 4. Fill up the preferences as per need. go to documents and media to get the URL of the resource which we want the user to download.Fill this url in resource URL in preference mode.
 ![ScreenShot](https://raw.githubusercontent.com/knowarth-technologies/download-interceptor/master/screenshots/liferay-6.1/doc&lib.png)
