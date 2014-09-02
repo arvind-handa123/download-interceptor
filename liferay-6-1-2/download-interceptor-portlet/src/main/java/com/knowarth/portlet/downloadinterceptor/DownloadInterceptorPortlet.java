@@ -1,13 +1,20 @@
+/**
+ * Copyright (c) 2014 KNOWARTH Technologies Pvt. Ltd. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
 package com.knowarth.portlet.downloadinterceptor;
 
-import com.liferay.util.bridges.mvc.MVCPortlet;
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
@@ -37,7 +44,10 @@ import com.liferay.mail.service.MailServiceUtil;
 import com.liferay.portal.kernel.mail.MailMessage;
 import com.liferay.portal.kernel.servlet.HttpHeaders;
 import com.liferay.portal.kernel.util.StringUtil;
-
+import com.liferay.util.bridges.mvc.MVCPortlet;
+/**
+* @author :Parth Ghiya
+*/
 public class DownloadInterceptorPortlet extends MVCPortlet {
 	protected String editJSP;
 	protected String viewJSP;
@@ -140,7 +150,7 @@ public class DownloadInterceptorPortlet extends MVCPortlet {
 
 		} catch (AddressException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			_log.error("Error Sending Message",e);
 		}
 		finally{
 			//For Downloading a resource
@@ -149,10 +159,6 @@ public class DownloadInterceptorPortlet extends MVCPortlet {
 			OutputStream out=resourceResponse.getPortletOutputStream();
 		
 			//LInk for resource URL Goes here. Uncomment it out for dynamic location and comment out the static link
-			System.out.println(resourceurl);
-			//InputStream is=new FileInputStream(new URL(resourceurl).get);
-			//InputStream is=DLFileEntryLocalServiceUtil.
-			//InputStream is=new FileInputStream("/home/parth-ghiya/Downloads/Single_Sign-on Implementation.pdf");
 			URL url = new URL(resourceurl);
 			URLConnection conn = url.openConnection();
 			resourceResponse.setContentType(conn.getContentType());
@@ -162,9 +168,6 @@ public class DownloadInterceptorPortlet extends MVCPortlet {
 			resourceResponse.addProperty(HttpHeaders.CACHE_CONTROL, "max-age=3600");
 
 			
-			// open the stream and put it into BufferedReader
-			//BufferedReader br = new BufferedReader(
-            //                   new InputStreamReader(conn.getInputStream()));
 			InputStream stream = conn.getInputStream();
 			int c;
 			while((c=stream.read())!=-1){
