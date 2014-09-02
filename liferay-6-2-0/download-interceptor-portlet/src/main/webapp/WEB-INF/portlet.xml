@@ -3,7 +3,7 @@
 <portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
 	<portlet>
 		<portlet-name>download-interceptor-portlet</portlet-name>
-		<display-name>download-interceptor-portlet</display-name>
+		<display-name>Download Interceptor</display-name>
 		<portlet-class>com.knowarth.portlet.downloadinterceptor.DownloadInterceptorPortlet</portlet-class>
 		<init-param>
 			<name>view-template</name>
@@ -20,8 +20,8 @@
 			<portlet-mode>edit</portlet-mode>
 		</supports>
 		<portlet-info>
-			<title>download-interceptor-portlet</title>
-			<short-title>download-interceptor-portlet</short-title>
+			<title>Download Interceptor</title>
+			<short-title>Download Interceptor</short-title>
 			<keywords>download-interceptor-portlet</keywords>
 		</portlet-info>
 		<security-role-ref>
